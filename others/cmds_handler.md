@@ -1,6 +1,8 @@
 #include "shell.h"
 
-
+/**
+  *
+  */
 void handle_exit(char *input, size_t *input_size)
 {
     free(input);

@@ -31,7 +31,7 @@ int main(void)
 		if (input[read_size - 1] == '\n')
 			input[read_size - 1] = '\0'; /* remove trailing newline */
 		/* check if the user wants to exit the shell */
-		if (_strncmp(input, "exit", 4) == 0)
+		if (strncmp_function(input, "exit", 4) == 0)
 		{
 			free(input);
 			input = NULL;
@@ -44,7 +44,7 @@ int main(void)
 			print_environment(); /* print environment variables */
 			continue;
 		}
-		if (_strncmp(input, "cd", 2) == 0)
+		if (strncmp_function(input, "cd", 2) == 0)
 		{
 			path = _strtrim(input + 2); /* Remove 'cd' from the input */
 			cd_function(path);

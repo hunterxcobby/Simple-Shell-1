@@ -28,7 +28,7 @@ char *_getenv(const char *name)
 		for (len = 0; env[i][len] != '='; len++)
 			;
 		/* compare the variable's name with the provided name */
-		if (_strncmp(name, env[i], len) == 0)
+		if (strncmp_function(name, env[i], len) == 0)
 		{
 			/* return a pointer to the value part of the variable */
 			value = &env[i][len + 1];

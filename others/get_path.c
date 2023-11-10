@@ -37,9 +37,9 @@ char *get_path(char *command)
 			return (NULL); /* memory allocation error */
 		}
 
-		_strcpy(full_path, path);                   /* copy the directory path */
-		full_path[path_len] = '/';                  /* add a '/' separator */
-		_strcpy(full_path + path_len + 1, command); /* append the command name */
+		strcpy_function(full_path, path);
+		full_path[path_len] = '/';
+		strcpy_function(full_path + path_len + 1, command);
 
 		if (access(full_path, X_OK) == 0)
 		{

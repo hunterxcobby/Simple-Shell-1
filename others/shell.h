@@ -17,11 +17,12 @@ extern char **environ;
 int strlen_function(const char *str);
 int strcmp_function(char *str1, char *str2);
 char *strdup_function(const char *str);
+char *strcpy_function(char *dest, const char *source);
 int strncmp_function(const char *str1, const char *str2, size_t num);
 char *_strcat(char *dest, char *src);
 char *_strtrim(char *str);
 char *get_path(char *command);
-char *_strcpy(char *dest, char *src);
+
 
 /* Other functions*/
 void cd_function(char *path);

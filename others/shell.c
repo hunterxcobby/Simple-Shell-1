@@ -4,12 +4,6 @@ void prompt(void);
 
 /**
  * main - Entry point of the shell program.
- *
- * This function implements the main loop of the shell, where it continuously
- * prompts the user for input, reads input, processes commands, and executes
- * them. It also handles the "exit" and "env" commands to,
- * exit the shell gracefully or to print out the environments.
- *
  * Return: Always returns 0.
  */
 int main(void)

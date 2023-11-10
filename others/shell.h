@@ -25,6 +25,7 @@ char *stmstr_function(char *str);
 
 
 /* Other functions*/
+void error(char *command);
 char *get_path(char *command);
 void cd_function(char *path);
 char *_getenv(const char *name);

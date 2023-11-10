@@ -26,7 +26,7 @@ char *strdup_function(const char *str)
 
 
 /**
- * _strncmp - Compare the first n characters of two strings.
+ * strncmp_function - Compare the first n characters of two strings.
  * @str1: The first string.
  * @str2: The second string.
  * @num: The number of characters to compare.
@@ -38,15 +38,15 @@ char *strdup_function(const char *str)
  */
 int strncmp_function(const char *str1, const char *str2, size_t num)
 {
-    while (num && *str1 && (*str1 == *str2))
-    {
-        str1++;
-        str2++;
-        num--;
-    }
+	while (num && *str1 && (*str1 == *str2))
+	{
+		str1++;
+		str2++;
+		num--;
+	}
 
-    if (num == 0)
-        return (0);
+	if (num == 0)
+		return (0);
 
-    return (*(unsigned char *)str1 - *(unsigned char *)str2);
+	return (*(unsigned char *)str1 - *(unsigned char *)str2);
 }

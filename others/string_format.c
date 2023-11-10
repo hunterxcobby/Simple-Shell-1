@@ -27,7 +27,7 @@ char *_strtrim(char *str)
 	}
 
 	/* move end pointer back to remove trailing whitespace */
-	end = str + _strlen(str) - 1;
+	end = str + strlen_function(str) - 1;
 	while (end > str && (*end == ' ' || *end == '\t' || *end == '\n'))
 	{
 		end--;

@@ -14,7 +14,7 @@ void print_environment(void)
 	for (i = 0; env[i]; i++)
 	{
 		/* print each environment variables */
-		write(STDOUT_FILENO, env[i], _strlen(env[i]));
+		write(STDOUT_FILENO, env[i], strlen_function(env[i]));
 		write(STDOUT_FILENO, "\n", 1);
 	}
 }

@@ -10,7 +10,7 @@ void prompt(void)
 {
 	if (isatty(STDIN_FILENO) == 1) /* check if the input is from a terminal */
 	{
-		write(STDOUT_FILENO, "$ ", 2); /* display the shell prompt */
+		write(STDOUT_FILENO, "cisfun$ ", 8); /* display the shell prompt */
 		fflush(stdout);                /* flush the output buffer */
 	}
 }

@@ -1,23 +1,5 @@
 #include "shell.h"
 
-/**
- * _strlen - Calculates the length of a null-terminated string.
- * @s: Pointer to the input string.
- *
- * Return: Length of the string.
- */
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (*s)
-	{
-		s++;
-		i++;
-	}
-
-	return (i);
-}
 
 /**
  * _strlen_const - Calculates the length of a null-terminated string.

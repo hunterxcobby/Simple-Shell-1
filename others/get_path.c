@@ -25,8 +25,8 @@ char *get_path(char *command)
 	path = strtok(path_env, ":"); /* tokenize the PATH environment variable */
 	while (path != NULL)
 	{
-		path_len = _strlen(path);       /* length of the current path */
-		command_len = _strlen(command); /* length of the command */
+		path_len = strlen_function(path);       /* length of the current path */
+		command_len = strlen_function(command); /* length of the command */
 		/* extra space for '/' and '\0' */
 		full_path_len = path_len + command_len + 2;
 

@@ -13,22 +13,23 @@
 extern char **environ;
 #define MAX_INPUT_LEN 1024
 
+/* String functions*/
+int strlen_function(char *str);
 char *_strdup(const char *str);
 char *_strcat(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
-int _strlen(char *s);
 char *_strtrim(char *str);
 char *get_path(char *command);
 char *_strcpy(char *dest, char *src);
 int _strncmp(const char *s1, const char *s2, size_t n);
+
+/* Other functions*/
+void cd_function(char *path);
 char *_getenv(const char *name);
 int execute_command(char *command_with_args);
 void execute_child_process(char *command, char *args[]);
 void print_environment(void);
 void prompt(void);
-void change_directory(char *path);
-void handle_cd(char *input, size_t *input_size);
-void handle_exit(char *input, size_t *input_size);
-char *custom_strtok(char *str, char delim);
+
 
 #endif

@@ -39,7 +39,7 @@ int main(void)
 			exit(EXIT_SUCCESS); /* exit the shell gracefully */
 		}
 		/* check if the user wants to print environment variables */
-		if (_strcmp(_strtrim(input), "env") == 0)
+		if (strcmp_function(_strtrim(input), "env") == 0)
 		{
 			print_environment(); /* print environment variables */
 			continue;

@@ -15,9 +15,9 @@ extern char **environ;
 
 /* String functions*/
 int strlen_function(char *str);
+int strcmp_function(char *str1, char *str2);
 char *_strdup(const char *str);
 char *_strcat(char *dest, char *src);
-int _strcmp(char *s1, char *s2);
 char *_strtrim(char *str);
 char *get_path(char *command);
 char *_strcpy(char *dest, char *src);

@@ -79,30 +79,22 @@ char *_strcat(char *dest, char *src)
 }
 
 /**
- * _strcmp - compare two strings
- * @s1: string value 1
- * @s2: string value 2
+ * strcmp_function - Compare two strings.
+ * @str1: The first string.
+ * @str2: The second string.
  *
- * Return: interger value
+ * Return:
+ *   - 0 if the strings are equal.
+ *   - A negative value if s1 is less than s2.
+ *   - A positive value if s1 is greater than s2.
  */
-
-int _strcmp(char *s1, char *s2)
+int strcmp_function(char *str1, char *str2)
 {
-	int res;
+    while (*str1 && (*str1 == *str2))
+    {
+        str1++;
+        str2++;
+    }
 
-	res = strcmp(s1, s2);
-
-	if (res == 0)
-	{
-		return (res);
-	}
-
-	else if (res < 0)
-	{
-		return (res);
-	}
-	else
-	{
-		return (res);
-	}
+    return *(unsigned char *)str1 - *(unsigned char *)str2;
 }

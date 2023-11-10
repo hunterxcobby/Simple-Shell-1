@@ -10,7 +10,7 @@ void cd_function(char *path)
 
 	if (!path || *path == '\0')
 		path = getenv("HOME");
-	else if (strcmp(path, "-") == 0)
+	else if (strcmp_function(path, "-") == 0)
 		path = getenv("OLDPWD");
 
 	if (chdir(path) != 0)

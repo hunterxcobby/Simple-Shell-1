@@ -73,7 +73,7 @@ void execute_child_process(char *command, char *args[])
 	}
 	else
 	{
-		perror("./hsh");
+		error(command);
 		_exit(EXIT_FAILURE);
 	}
 }

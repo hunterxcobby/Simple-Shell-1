@@ -26,12 +26,12 @@ char *stmstr_function(char *str);
 
 /* Other functions*/
 void error(char *command);
+void print_env(void);
 char *get_path(char *command);
 void cd_function(char *path);
 char *_getenv(const char *name);
 int execute_command(char *command_with_args);
 void execute_child_process(char *command, char *args[]);
-void print_environment(void);
 void prompt(void);
 
 

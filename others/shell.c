@@ -35,7 +35,7 @@ int main(void)
 		/* check if the user wants to print environment variables */
 		if (strcmp_function(stmstr_function(input), "env") == 0)
 		{
-			print_environment(); /* print environment variables */
+			print_env(); /* print environment variables */
 			continue;
 		}
 		if (strncmp_function(input, "cd", 2) == 0)

@@ -39,14 +39,14 @@ int main(void)
 			exit(EXIT_SUCCESS); /* exit the shell gracefully */
 		}
 		/* check if the user wants to print environment variables */
-		if (strcmp_function(_strtrim(input), "env") == 0)
+		if (strcmp_function(stmstr_function(input), "env") == 0)
 		{
 			print_environment(); /* print environment variables */
 			continue;
 		}
 		if (strncmp_function(input, "cd", 2) == 0)
 		{
-			path = _strtrim(input + 2); /* Remove 'cd' from the input */
+			path = stmstr_function(input + 2); /* Remove 'cd' from the input */
 			cd_function(path);
 			free(input);
 			input = NULL;
@@ -55,7 +55,7 @@ int main(void)
 		}
 		if (read_size > 1) /* Execute the command and handle errors */
 		{
-			result = execute_command(_strtrim(input));
+			result = execute_command(stmstr_function(input));
 			if (result == -1)
 				break;
 		}

@@ -3,11 +3,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/types.h>
 #include <unistd.h>
 #include <string.h>
+#include <ctype.h>
 #include <stdbool.h>
 #include <stddef.h>
-#include <sys/types.h>
 #include <sys/wait.h>
 
 extern char **environ;
@@ -20,12 +21,11 @@ char *strdup_function(const char *str);
 char *strcpy_function(char *dest, const char *source);
 char *strncpy_function(char *dest, const char *source, int num);
 int strncmp_function(const char *str1, const char *str2, size_t num);
-char *_strcat(char *dest, char *src);
-char *_strtrim(char *str);
-char *get_path(char *command);
+char *stmstr_function(char *str);
 
 
 /* Other functions*/
+char *get_path(char *command);
 void cd_function(char *path);
 char *_getenv(const char *name);
 int execute_command(char *command_with_args);

@@ -8,13 +8,13 @@
  */
 int strlen_function(char *str)
 {
-    int len = 0;
+	int len = 0;
 
-    while (*str)
-    {
-        len++;
-        str++;
-    }
+	while (*str)
+	{
+		len++;
+		str++;
+	}
 
-    return len;
+	return (len);
 }

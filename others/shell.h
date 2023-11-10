@@ -14,9 +14,9 @@ extern char **environ;
 #define MAX_INPUT_LEN 1024
 
 /* String functions*/
-int strlen_function(char *str);
+int strlen_function(const char *str);
 int strcmp_function(char *str1, char *str2);
-char *_strdup(const char *str);
+char *strdup_function(const char *str);
 char *_strcat(char *dest, char *src);
 char *_strtrim(char *str);
 char *get_path(char *command);

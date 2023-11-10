@@ -18,6 +18,7 @@ int strlen_function(const char *str);
 int strcmp_function(char *str1, char *str2);
 char *strdup_function(const char *str);
 char *strcpy_function(char *dest, const char *source);
+char *strncpy_function(char *dest, const char *source, int num);
 int strncmp_function(const char *str1, const char *str2, size_t num);
 char *_strcat(char *dest, char *src);
 char *_strtrim(char *str);

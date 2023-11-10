@@ -23,30 +23,35 @@ char *strcpy_function(char *dest, const char *source)
 	return (orig_dest);
 }
 
+
 /**
- * _strncpy - copies string
- * @dest: string 1 value
- * @src: string 2 value
- * @n: size
+ * strncpy_function - Copy up to n characters from source to destination.
+ * @dest: The destination string.
+ * @source: The source string.
+ * @num: The maximum number of characters to copy.
  *
- * Return: dest
+ * Return: A pointer to the destination string.
  */
-
-char *_strncpy(char *dest, char *src, int n)
+char *strncpy_function(char *dest, const char *source, int num)
 {
-	int i;
+	char *orig_dest = dest;
 
-	for (i = 0; i < n && src[i] != '\0'; i++)
+	while (num > 0 && *source)
 	{
-		dest[i] = src[i];
+		*dest = *source;
+		dest++;
+		source++;
+		num--;
 	}
 
-	for (; i < n; i++)
+	while (num > 0)
 	{
-		dest[i] = '\0';
+		*dest = '\0';
+		dest++;
+		num--;
 	}
 
-	return (dest);
+	return (orig_dest);
 }
 
 

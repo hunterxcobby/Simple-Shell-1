@@ -51,7 +51,7 @@ int main(void)
 		}
 		if (read_size > 1) /* Execute the command and handle errors */
 		{
-			result = execute_command(stmstr_function(input));
+			result = exec_cmd(stmstr_function(input));
 			if (result == -1)
 				break;
 		}

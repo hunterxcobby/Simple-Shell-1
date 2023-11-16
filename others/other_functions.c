@@ -3,7 +3,8 @@
 /**
  * error - print error message
  * @command: the command
-/* this is to print the erro message*/
+ * this is to print the erro message
+*/
 void error(char *command)
 {
 	char *error_message;

@@ -29,7 +29,7 @@ void error(char *command);
 void print_env(void);
 void cd_function(char *path);
 char *_getenv(const char *name);
-int execute_command(char *command_with_args);
+int exec_cmd(char *command_with_args);
 void exec_cp(char *command, char *args[]);
 void prompt(void);
 char *find_path(char *command);

@@ -12,68 +12,37 @@
  */
 int execute_command(char *command_with_args)
 {
-	pid_t child_pid;
-	int status, arg_count = 0;
-	char *token, *args[MAX_INPUT_LEN / 2 + 2];
+    pid_t child_pid;
+    int status;
+    char *token, *args[MAX_INPUT_LEN / 2 + 2];
+    int arg_count = 0;
 
-	child_pid = fork();
-	if (child_pid == -1) /* child process */
-	{
-		perror("fork");
-		return (-1);
-	}
-	if (child_pid == 0)
-	{
-		/* tokenize commands and its arguments */
-		token = strtok(command_with_args, " ");
-		while (token != NULL)
-		{
-			args[arg_count++] = token;
-			token = strtok(NULL, " ");
-		}
-		args[arg_count] = NULL;
-		/* call execute child process command */
-		execute_child_process(args[0], args);
-	}
-	else
-	{
-		wait(&status);
-	}
-	return (0);
-}
+    child_pid = fork();
 
-/**
- * execute_child_process - Execute a command in a child process with full path.
- * @command: The command to execute.
- * @args: The arguments for the command.
- *
- * This function executes a command in a child process using the execve system
- * call. It handles errors related to executing the command and accessing the
- * command's executable file.
- */
-void execute_child_process(char *command, char *args[])
-{
-	char *path = find_path(command);
+    if (child_pid == -1)
+    {
+        perror("fork");
+        return -1;
+    }
 
-	if (path != NULL)
-	{
-		if (execve(path, args, NULL) == -1)
-		{
-			perror("execve");
-			_exit(EXIT_FAILURE);
-		}
-	}
-	else if (access(command, X_OK) == 0)
-	{
-		if (execve(command, args, NULL) == -1)
-		{
-			perror("execve");
-			_exit(EXIT_FAILURE);
-		}
-	}
-	else
-	{
-		error(command);
-		_exit(EXIT_FAILURE);
-	}
+    if (child_pid == 0) 
+    {
+        token = strtok(command_with_args, " ");
+
+        while (token != NULL && arg_count < MAX_INPUT_LEN / 2 + 1)
+        {
+            args[arg_count++] = token;
+            token = strtok(NULL, " ");
+        }
+
+        args[arg_count] = NULL;
+
+        exec_cp(args[0], args);
+    }
+    else 
+    {
+        wait(&status);
+    }
+
+    return 0;
 }

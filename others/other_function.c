@@ -14,3 +14,40 @@ void error(char *command)
     exit(EXIT_FAILURE);
 
 }
+
+
+/**
+ * execcp - Execute a command in a child process with full path.
+ * @command: The command to execute.
+ * @args: The arguments for the command.
+ *
+ * This function executes a command in a child process using the execve system
+ * call. It handles errors related to executing the command and accessing the
+ * command's executable file.
+ */
+void exec_cp(char *command, char *args[])
+{
+    char *path = find_path(command);
+
+    if (path == NULL)
+    {
+        if (access(command, X_OK) == 0)
+        {
+            path = command;
+        }
+        else
+        {
+            error(command);
+            _exit(EXIT_FAILURE);
+        }
+    }
+
+    if (execve(path, args, NULL) == -1)
+    {
+        perror("execve");
+    }
+
+    free(path);
+
+    _exit(EXIT_FAILURE);
+}

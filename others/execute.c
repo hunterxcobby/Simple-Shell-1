@@ -53,7 +53,7 @@ int execute_command(char *command_with_args)
  */
 void execute_child_process(char *command, char *args[])
 {
-	char *path = get_path(command);
+	char *path = find_path(command);
 
 	if (path != NULL)
 	{

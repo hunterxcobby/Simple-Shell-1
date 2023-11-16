@@ -11,9 +11,11 @@ int main(void)
 	char *path, *input = NULL;
 	size_t input_size = 0;
 	ssize_t read_size;
+	int loop;
 	int result;
 
-	while (1)
+	loop = 1;
+	while (loop)
 	{
 		prompt(); /* display the shell prompt */
 		read_size = getline(&input, &input_size, stdin); /* read user input */

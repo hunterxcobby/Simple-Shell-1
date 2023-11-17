@@ -17,39 +17,30 @@ int main(void)
 	loop = 1;
 	while (loop)
 	{
-		prompt(); /* display the shell prompt */
-		read_size = getline(&input, &input_size, stdin); /* read user input */
+		if (isatty(STDIN_FILENO) == 1) 
+		{
+			write(STDOUT_FILENO, "cisfun$ ", 8); 
+			fflush(stdout);  
+		}
+		read_size = getline(&input, &input_size, stdin); 
 		if (read_size == -1)
 		{
 			free(input);
-			return (0); /* exit loop and program on input failure */
+			return (0); 
 		}
 		if (input[read_size - 1] == '\n')
-			input[read_size - 1] = '\0'; /* remove trailing newline */
-		/* check if the user wants to exit the shell */
-		if (strncmp_function(input, "exit", 4) == 0)
-		{
-			free(input);
-			input = NULL;
-			input_size = 0;
-			exit(EXIT_SUCCESS); /* exit the shell gracefully */
-		}
-		/* check if the user wants to print environment variables */
-		if (strcmp_function(stmstr_function(input), "env") == 0)
-		{
-			print_env(); /* print environment variables */
-			continue;
-		}
+			input[read_size - 1] = '\0'; 
+		builtins(input);
 		if (strncmp_function(input, "cd", 2) == 0)
 		{
-			path = stmstr_function(input + 2); /* Remove 'cd' from the input */
+			path = stmstr_function(input + 2);
 			cd_function(path);
 			free(input);
 			input = NULL;
 			input_size = 0;
-			continue;
+
 		}
-		if (read_size > 1) /* Execute the command and handle errors */
+		if (read_size > 1)
 		{
 			result = exec_cmd(stmstr_function(input));
 			if (result == -1)

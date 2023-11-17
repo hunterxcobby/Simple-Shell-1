@@ -30,6 +30,7 @@ void print_env(void);
 void cd_function(char *path);
 int exec_cmd(char *command_with_args);
 void exec_cp(char *command, char *args[]);
+void builtins(char *input);
 void prompt(void);
 char *find_path(char *command);
 

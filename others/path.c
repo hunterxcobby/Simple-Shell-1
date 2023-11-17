@@ -4,7 +4,7 @@ void arg(void);
 /**
  * find_path - Get the full path of a command.
  * @command: The command for which to find the full path.
- * Return: the full path otherwise NULL.
+ * Return: the full path or NULL.
  */
 char *find_path(char *command)
 {

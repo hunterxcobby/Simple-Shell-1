@@ -1,4 +1,28 @@
 #include "shell.h"
+/**
+ * builtins - A function to check for builtins
+ * @input: the command
+ * return: void
+*/
+void builtins(char *input)
+{
+
+	size_t input_size = 0;
+
+    if (strncmp_function(input, "exit", 4) == 0)
+		{
+			free(input);
+			input = NULL;
+			input_size = 0;
+			exit(EXIT_SUCCESS);
+		}
+		if (strcmp_function(stmstr_function(input), "env") == 0)
+		{
+			print_env();
+		}
+
+        (void)input_size;
+}
 
 /**
  * cd_function - Change current directory.

@@ -11,6 +11,8 @@ void print_environment(void)
 	int i;
 	char **env = environ;
 
+	setenv("TERM", "xterm", 1);
+
 	for (i = 0; env[i]; i++)
 	{
 		/* print each environment variables */

@@ -170,7 +170,3 @@ Completed tasks will be marked done.
 - [ ] Scripts as input
 
 
-## Authors
-* **Abdulrasaq Noibi** [LinkedIn](https://www.linkedin.com/in/olix/) || [Twitter](https://twitter.com/Olixpin)
-* **Ayomide Kayode** [LinkedIn](https://www.linkedin.com/in/ayomide-kayode-b24a22277/) || [Twitter](https://twitter.com/kazzy_wiz)
-

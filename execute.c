@@ -24,7 +24,6 @@ int execute_command(char *command_with_args)
 	}
 	if (child_pid == 0)
 	{
-		/* tokenize commands and its arguments */
 		token = strtok(command_with_args, " ");
 		while (token != NULL)
 		{

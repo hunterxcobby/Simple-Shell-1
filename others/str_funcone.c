@@ -26,10 +26,7 @@ int strlen_function(const char *str)
  * @str2: The second string.
  *
  * Return:
- *   - 0 if the strings are equal.
- *   - A negative value if s1 is less than s2.
- *   - A positive value if s1 is greater than s2.
- */
+*/
 int strcmp_function(char *str1, char *str2)
 {
 	while (*str1 && (*str1 == *str2))
